@@ -77,47 +77,47 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode for cybersecurity theme */
-    --background: 220 91% 4%;
-    --foreground: 220 27% 98%;
+    /* Custom dark theme with specified color palette */
+    --background: 220 23% 7%;        /* #0D1117 */
+    --foreground: 0 0% 100%;         /* #FFFFFF */
 
-    --card: 220 91% 6%;
-    --card-foreground: 220 27% 98%;
+    --card: 220 16% 12%;             /* #161B22 */
+    --card-foreground: 0 0% 100%;    /* #FFFFFF */
 
-    --popover: 220 91% 6%;
-    --popover-foreground: 220 27% 98%;
+    --popover: 220 16% 12%;          /* #161B22 */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF */
 
-    --primary: 180 100% 45%;
-    --primary-foreground: 220 91% 4%;
-    --primary-glow: 180 100% 65%;
+    --primary: 165 100% 39%;         /* #00C896 neon teal green */
+    --primary-foreground: 220 23% 7%; /* #0D1117 */
+    --primary-glow: 165 100% 50%;    /* Brighter teal */
 
-    --secondary: 220 91% 10%;
-    --secondary-foreground: 220 27% 98%;
+    --secondary: 213 85% 53%;        /* #1F6FEB vibrant blue */
+    --secondary-foreground: 0 0% 100%; /* #FFFFFF */
 
-    --muted: 220 91% 8%;
-    --muted-foreground: 220 15% 65%;
+    --muted: 220 16% 12%;            /* #161B22 */
+    --muted-foreground: 220 14% 83%; /* #C9D1D9 light gray */
 
-    --accent: 180 100% 35%;
-    --accent-foreground: 220 91% 4%;
-    --accent-glow: 180 100% 55%;
+    --accent: 213 100% 68%;          /* #58A6FF soft bright blue */
+    --accent-foreground: 220 23% 7%; /* #0D1117 */
+    --accent-glow: 213 100% 75%;     /* Brighter blue */
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 220 27% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 91% 12%;
-    --input: 220 91% 12%;
-    --ring: 180 100% 45%;
+    --border: 220 16% 18%;           /* Slightly lighter than card */
+    --input: 220 16% 18%;            /* Slightly lighter than card */
+    --ring: 165 100% 39%;            /* Primary teal */
 
-    /* Updated gradients for dark mode */
-    --gradient-primary: linear-gradient(135deg, hsl(220 91% 8%), hsl(220 91% 15%));
-    --gradient-accent: linear-gradient(135deg, hsl(180 100% 35%), hsl(180 100% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 91% 2%), hsl(220 91% 8%));
-    --gradient-card: linear-gradient(145deg, hsl(220 91% 6%), hsl(220 91% 8%));
+    /* Updated gradients with new colors */
+    --gradient-primary: linear-gradient(135deg, hsl(165 100% 39%), hsl(165 100% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(213 85% 53%), hsl(213 100% 68%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 23% 7%), hsl(220 16% 12%));
+    --gradient-card: linear-gradient(145deg, hsl(220 16% 12%), hsl(220 16% 15%));
 
-    /* Updated shadows for dark mode */
-    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
-    --shadow-glow: 0 0 40px hsl(180 100% 45% / 0.4);
-    --shadow-card: 0 4px 12px hsl(0 0% 0% / 0.3);
+    /* Updated shadows with new colors */
+    --shadow-elegant: 0 10px 30px -10px hsl(165 100% 39% / 0.3);
+    --shadow-glow: 0 0 40px hsl(165 100% 39% / 0.4);
+    --shadow-card: 0 4px 12px hsl(220 23% 7% / 0.5);
   }
 }
 
