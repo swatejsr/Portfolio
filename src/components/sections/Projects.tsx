@@ -9,6 +9,38 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "Text2QR",
+      category: "web",
+      description: "⚡ Instantly generate QR codes for any text input! 📝 Enter any text → 📷 Get a scannable QR code → 📲 Share or download! 💡 Built with simplicity, speed, and usability in mind.",
+      technologies: ["HTML", "CSS", "JavaScript", "QR API"],
+      status: "Completed",
+      period: "2024",
+      features: [
+        "Instant QR code generation",
+        "Text input to QR conversion",
+        "Download functionality",
+        "Share options"
+      ],
+      github: "#",
+      live: "#"
+    },
+    {
+      title: "Narrato",
+      category: "web",
+      description: "Easily convert 📄 text into 🎤 different language speech. Perfect for accessibility, e-learning, and content creation! Just enter your text and listen instantly.",
+      technologies: ["HTML", "CSS", "JavaScript", "Speech API"],
+      status: "Completed",
+      period: "2024",
+      features: [
+        "Text to speech conversion",
+        "Multiple language support",
+        "Accessibility features",
+        "Instant playback"
+      ],
+      github: "#",
+      live: "#"
+    },
+    {
       title: "ResQ - Emergency Response System",
       category: "major",
       description: "A comprehensive emergency response platform integrating multiple functionalities for quick disaster response and coordination.",
