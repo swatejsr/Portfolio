@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
+import profileImage from "@/assets/swatej-profile.jpg";
 
 const Hero = () => {
   const handleDownloadCV = () => {
@@ -29,6 +31,20 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center gradient-hero">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center animate-fade-in">
+          {/* Profile Image */}
+          <div className="mb-8">
+            <Avatar className="w-32 h-32 mx-auto mb-4 ring-4 ring-accent/20 shadow-xl">
+              <AvatarImage 
+                src={profileImage} 
+                alt="Swatej Singh - Cybersecurity Specialist & Web Developer" 
+                className="object-cover"
+              />
+              <AvatarFallback className="text-2xl font-bold bg-accent text-accent-foreground">
+                SS
+              </AvatarFallback>
+            </Avatar>
+          </div>
+          
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
             Hi, I'm{" "}
             <span className="text-gradient-accent">Swatej Singh</span>
