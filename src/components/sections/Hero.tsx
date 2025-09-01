@@ -30,66 +30,72 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center gradient-hero">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center animate-fade-in">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in">
           {/* Profile Image */}
-          <div className="mb-8">
-            <Avatar className="w-32 h-32 mx-auto mb-4 ring-4 ring-accent/20 shadow-xl">
-              <AvatarImage 
-                src={profileImage} 
-                alt="Swatej Singh - Cybersecurity Specialist & Web Developer" 
-                className="object-cover"
-              />
-              <AvatarFallback className="text-2xl font-bold bg-accent text-accent-foreground">
-                SS
-              </AvatarFallback>
-            </Avatar>
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <Avatar className="w-80 h-80 ring-4 ring-accent/20 shadow-2xl">
+                <AvatarImage 
+                  src={profileImage} 
+                  alt="Swatej Singh - Cybersecurity Specialist & Web Developer" 
+                  className="object-cover"
+                />
+                <AvatarFallback className="text-6xl font-bold bg-accent text-accent-foreground">
+                  SS
+                </AvatarFallback>
+              </Avatar>
+              <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-accent/20 rounded-full blur-xl"></div>
+            </div>
           </div>
-          
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-            Hi, I'm{" "}
-            <span className="text-gradient-accent">Swatej Singh</span>
-          </h1>
-          
-          <p className="text-xl sm:text-2xl text-primary-foreground/80 mb-4">
-            Aspiring Cybersecurity Specialist & Web Developer
-          </p>
-          
-          <p className="text-lg text-primary-foreground/70 mb-8 max-w-2xl mx-auto">
-            I belong to Unnao, completed my 10+2 from Lucknow Public School, currently pursuing B.Tech in CS with a specialization in Cybersecurity. I love learning new things, traveling, and exploring hidden geographical facts.
-          </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Button
-              onClick={handleDownloadCV}
-              className="bg-accent hover:bg-accent-glow text-accent-foreground shadow-glow transition-smooth"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Download CV
-            </Button>
+          {/* Content */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
+              Hi, I'm{" "}
+              <span className="text-gradient-accent">Swatej Singh</span>
+            </h1>
             
-            <Button
-              variant="outline"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-smooth"
-            >
-              Get In Touch
-            </Button>
-          </div>
+            <p className="text-xl sm:text-2xl text-primary-foreground/80 mb-4">
+              Aspiring Cybersecurity Specialist & Web Developer
+            </p>
+            
+            <p className="text-lg text-primary-foreground/70 mb-8 max-w-2xl">
+              I belong to Unnao, completed my 10+2 from Lucknow Public School, currently pursuing B.Tech in CS with a specialization in Cybersecurity. I love learning new things, traveling, and exploring hidden geographical facts.
+            </p>
 
-          {/* Social Links */}
-          <div className="flex justify-center space-x-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-full border border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground transition-smooth shadow-card"
-                aria-label={link.label}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+              <Button
+                onClick={handleDownloadCV}
+                className="bg-accent hover:bg-accent-glow text-accent-foreground shadow-glow transition-smooth"
               >
-                {link.icon}
-              </a>
-            ))}
+                <Download className="mr-2 h-4 w-4" />
+                Download CV
+              </Button>
+              
+              <Button
+                variant="outline"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-smooth"
+              >
+                Get In Touch
+              </Button>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex justify-center lg:justify-start space-x-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full border border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground transition-smooth shadow-card"
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
