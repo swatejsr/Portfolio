@@ -176,6 +176,33 @@ export default {
 					'50%': {
 						backgroundPosition: '100% 50%'
 					}
+				},
+				'wiggle': {
+					'0%, 100%': {
+						transform: 'rotate(-3deg)'
+					},
+					'50%': {
+						transform: 'rotate(3deg)'
+					}
+				},
+				'tilt': {
+					'0%, 50%, 100%': {
+						transform: 'rotate(0deg)'
+					},
+					'25%': {
+						transform: 'rotate(1deg)'
+					},
+					'75%': {
+						transform: 'rotate(-1deg)'
+					}
+				},
+				'morph': {
+					'0%, 100%': {
+						borderRadius: '60% 40% 30% 70%/60% 30% 70% 40%'
+					},
+					'50%': {
+						borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%'
+					}
 				}
 			},
 			animation: {
@@ -190,7 +217,10 @@ export default {
 				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
 				'rotate-slow': 'rotate-slow 20s linear infinite',
 				'scale-in': 'scale-in 0.5s ease-out',
-				'gradient-shift': 'gradient-shift 3s ease-in-out infinite'
+				'gradient-shift': 'gradient-shift 3s ease-in-out infinite',
+				'wiggle': 'wiggle 1s ease-in-out infinite',
+				'tilt': 'tilt 4s ease-in-out infinite',
+				'morph': 'morph 8s ease-in-out infinite'
 			}
 		}
 	},

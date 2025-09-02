@@ -92,9 +92,9 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="animate-slide-up">
-            <Card className="shadow-card border-0 bg-card h-full">
+            <Card className="shadow-card border-0 bg-card h-full card-3d hover-3d">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-foreground">
+                <CardTitle className="text-2xl font-bold text-foreground tilt-effect">
                   Let's Start a Conversation
                 </CardTitle>
               </CardHeader>
@@ -111,9 +111,9 @@ const Contact = () => {
                     <a
                       key={index}
                       href={info.href}
-                      className="flex items-center p-4 rounded-lg bg-accent/5 hover:bg-accent/10 transition-smooth group"
+                      className="flex items-center p-4 rounded-lg bg-accent/5 hover:bg-accent/10 transition-spring group card-3d"
                     >
-                      <div className="p-2 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-smooth mr-4">
+                      <div className="p-2 rounded-lg bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-spring mr-4 floating-3d">
                         {info.icon}
                       </div>
                       <div>
@@ -134,7 +134,7 @@ const Contact = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 rounded-lg bg-accent/5 text-accent hover:bg-accent hover:text-accent-foreground transition-smooth shadow-card"
+                        className="p-3 rounded-lg bg-accent/5 text-accent hover:bg-accent hover:text-accent-foreground transition-spring shadow-card card-3d magnetic-hover floating-3d"
                         aria-label={link.label}
                       >
                         {link.icon}
@@ -144,7 +144,7 @@ const Contact = () => {
                 </div>
 
                 {/* Quick Response Promise */}
-                <div className="p-4 rounded-lg bg-gradient-accent/10 border border-accent/20">
+                <div className="p-4 rounded-lg bg-gradient-accent/10 border border-accent/20 card-3d pulse-glow">
                   <p className="text-sm text-foreground font-medium mb-1">Quick Response Guarantee</p>
                   <p className="text-xs text-muted-foreground">
                     I typically respond to messages within 24 hours. For urgent matters, 
@@ -157,9 +157,9 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-slide-up">
-            <Card className="shadow-card border-0 bg-card">
+            <Card className="shadow-card border-0 bg-card card-3d hover-3d">
               <CardHeader>
-                <CardTitle className="text-xl font-bold text-foreground">
+                <CardTitle className="text-xl font-bold text-foreground tilt-effect">
                   Send me a message
                 </CardTitle>
               </CardHeader>
@@ -175,7 +175,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="mt-1 border-accent/30 focus:border-accent"
+                        className="mt-1 border-accent/30 focus:border-accent hover-3d transition-spring"
                         placeholder="Your full name"
                       />
                     </div>
@@ -188,7 +188,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="mt-1 border-accent/30 focus:border-accent"
+                        className="mt-1 border-accent/30 focus:border-accent hover-3d transition-spring"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -203,7 +203,7 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="mt-1 border-accent/30 focus:border-accent"
+                      className="mt-1 border-accent/30 focus:border-accent hover-3d transition-spring"
                       placeholder="What's this about?"
                     />
                   </div>
@@ -217,7 +217,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="mt-1 border-accent/30 focus:border-accent resize-none"
+                      className="mt-1 border-accent/30 focus:border-accent resize-none hover-3d transition-spring"
                       placeholder="Tell me about your project, question, or just say hello..."
                     />
                   </div>
@@ -225,7 +225,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full bg-accent hover:bg-accent-glow text-accent-foreground shadow-glow transition-smooth"
+                    className="w-full bg-accent hover:bg-accent-glow text-accent-foreground shadow-glow transition-spring card-3d magnetic-hover"
                   >
                     {isLoading ? (
                       <div className="flex items-center">
@@ -234,7 +234,7 @@ const Contact = () => {
                       </div>
                     ) : (
                       <>
-                        <Send className="h-4 w-4 mr-2" />
+                        <Send className="h-4 w-4 mr-2 wiggle-effect" />
                         Send Message
                       </>
                     )}

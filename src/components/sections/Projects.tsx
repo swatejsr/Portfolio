@@ -169,9 +169,9 @@ const Projects = () => {
               key={category.id}
               variant={selectedCategory === category.id ? "default" : "outline"}
               onClick={() => setSelectedCategory(category.id)}
-              className={`transition-smooth ${
+              className={`transition-spring card-3d magnetic-hover ${
                 selectedCategory === category.id
-                  ? "bg-accent text-accent-foreground shadow-glow"
+                  ? "bg-accent text-accent-foreground shadow-glow pulse-glow"
                   : "border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground"
               }`}
             >
@@ -185,20 +185,20 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <Card 
               key={index} 
-              className="shadow-card border-0 gradient-card transition-smooth hover:shadow-elegant hover:scale-105 animate-fade-in"
+              className="shadow-card border-0 gradient-card transition-spring hover:shadow-elegant card-3d hover-3d floating-3d animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader>
                 <div className="flex justify-between items-start mb-2">
-                  <CardTitle className="text-lg font-semibold text-foreground">
+                  <CardTitle className="text-lg font-semibold text-foreground tilt-effect">
                     {project.title}
                   </CardTitle>
-                  <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20">
+                  <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20 pulse-glow">
                     {project.status}
                   </Badge>
                 </div>
                 <div className="flex items-center text-sm text-muted-foreground">
-                  <Calendar className="h-4 w-4 mr-2" />
+                  <Calendar className="h-4 w-4 mr-2 wiggle-effect" />
                   {project.period}
                 </div>
               </CardHeader>
@@ -214,7 +214,7 @@ const Projects = () => {
                     <Badge 
                       key={techIndex} 
                       variant="outline" 
-                      className="text-xs border-accent/30 text-accent"
+                      className="text-xs border-accent/30 text-accent hover-3d transition-spring"
                     >
                       {tech}
                     </Badge>
@@ -226,8 +226,8 @@ const Projects = () => {
                   <h4 className="text-sm font-semibold text-foreground mb-2">Key Features:</h4>
                   <ul className="text-xs text-muted-foreground space-y-1">
                     {project.features.slice(0, 3).map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center">
-                        <div className="w-1 h-1 bg-accent rounded-full mr-2"></div>
+                      <li key={featureIndex} className="flex items-center hover-3d transition-spring">
+                        <div className="w-1 h-1 bg-accent rounded-full mr-2 pulse-glow"></div>
                         {feature}
                       </li>
                     ))}
@@ -239,14 +239,14 @@ const Projects = () => {
                   <Button 
                     size="sm" 
                     variant="outline"
-                    className="flex-1 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground"
+                    className="flex-1 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground card-3d magnetic-hover transition-spring"
                   >
                     <Github className="h-4 w-4 mr-2" />
                     Code
                   </Button>
                   <Button 
                     size="sm"
-                    className="flex-1 bg-accent hover:bg-accent-glow text-accent-foreground"
+                    className="flex-1 bg-accent hover:bg-accent-glow text-accent-foreground card-3d magnetic-hover transition-spring"
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Live
@@ -259,10 +259,10 @@ const Projects = () => {
 
         {/* Internship Highlight */}
         <div className="mt-16 animate-fade-in">
-          <Card className="shadow-elegant border-0 bg-gradient-accent/5">
+          <Card className="shadow-elegant border-0 bg-gradient-accent/5 card-3d hover-3d">
             <CardContent className="p-8 text-center">
-              <Building2 className="h-12 w-12 text-accent mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <Building2 className="h-12 w-12 text-accent mx-auto mb-4 floating-3d" />
+              <h3 className="text-2xl font-bold text-foreground mb-4 tilt-effect">
                 Codsoft Internship Experience
               </h3>
               <p className="text-muted-foreground max-w-2xl mx-auto">

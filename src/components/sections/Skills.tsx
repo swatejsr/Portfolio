@@ -66,10 +66,10 @@ const Skills = () => {
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="shadow-card border-0 bg-card animate-slide-up">
+            <Card key={index} className="shadow-card border-0 bg-card animate-slide-up card-3d hover-3d">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="p-2 rounded-lg bg-accent/10 text-accent mr-4">
+                  <div className="p-2 rounded-lg bg-accent/10 text-accent mr-4 skill-orb">
                     {category.icon}
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
@@ -77,10 +77,10 @@ const Skills = () => {
                 
                 <div className="space-y-6">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
+                    <div key={skillIndex} className="hover-3d transition-spring">
                       <div className="flex justify-between items-center mb-2">
                         <span className="font-medium text-foreground">{skill.name}</span>
-                        <span className="text-sm text-accent font-semibold">{skill.level}%</span>
+                        <span className="text-sm text-accent font-semibold pulse-glow">{skill.level}%</span>
                       </div>
                       <Progress value={skill.level} className="mb-1" />
                       <p className="text-xs text-muted-foreground">{skill.description}</p>
@@ -94,10 +94,10 @@ const Skills = () => {
 
         {/* Learning Path */}
         <div className="animate-fade-in">
-          <Card className="shadow-elegant border-0 bg-gradient-accent/5">
+          <Card className="shadow-elegant border-0 bg-gradient-accent/5 card-3d hover-3d">
             <CardContent className="p-8">
               <div className="flex items-center mb-6">
-                <Laptop className="h-6 w-6 text-accent mr-3" />
+                <Laptop className="h-6 w-6 text-accent mr-3 floating-3d" />
                 <h3 className="text-xl font-semibold text-foreground">Currently Learning</h3>
               </div>
               <p className="text-muted-foreground mb-6">
@@ -108,9 +108,9 @@ const Skills = () => {
                 {learningPath.map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center p-4 bg-card rounded-lg shadow-card transition-smooth hover:shadow-elegant"
+                    className="flex items-center p-4 bg-card rounded-lg shadow-card transition-spring hover:shadow-elegant card-3d tilt-effect"
                   >
-                    <div className="w-2 h-2 bg-accent rounded-full mr-3 animate-glow"></div>
+                    <div className="w-2 h-2 bg-accent rounded-full mr-3 pulse-glow"></div>
                     <span className="text-sm font-medium text-foreground">{item}</span>
                   </div>
                 ))}
