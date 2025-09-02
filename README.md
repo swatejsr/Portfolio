@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# 🌐 Swatej Singh - Portfolio
 
-## Project info
+This is my personal portfolio website showcasing my skills, projects, certifications, and experience.  
+Built with **React + TypeScript + Tailwind CSS + Vite**, it provides a modern, responsive, and professional interface.
 
-**URL**: https://lovable.dev/projects/4ae8d993-2be9-416c-aee8-83070b8edeba
+---
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- 📌 **Hero Section** – Quick introduction and links to social profiles.  
+- 👨‍💻 **About Me** – Background, education, and interests.  
+- 📜 **Certifications & Job Simulations** – Achievements and hands-on experiences.  
+- 🛠 **Skills** – Programming languages, frameworks, and tools.  
+- 📂 **Projects** – Showcasing academic, personal, and internship projects.  
+- 🎓 **Practice Platforms** – Hackerrank, LeetCode, and other coding platforms.  
+- 📞 **Contact Section** – Direct links to email, GitHub, and LinkedIn.  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4ae8d993-2be9-416c-aee8-83070b8edeba) and start prompting.
+## 🛠 Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend:** React, TypeScript, Tailwind CSS  
+- **Bundler:** Vite  
+- **Version Control:** Git, GitHub  
+- **Deployment:** (Optional: Add if you deploy, e.g., Vercel/Netlify/GitHub Pages)  
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📂 Folder Structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+portfolio/
+├── public/ # Static assets (favicon, images, etc.)
+├── src/ # Main application source
+│ ├── components/ # Reusable UI components
+│ ├── pages/ # Individual page sections
+│ ├── App.tsx # Root component
+│ └── main.tsx # Entry point
+├── index.html # HTML template
+├── tailwind.config.ts # Tailwind configuration
+├── package.json # Project metadata and dependencies
+└── README.md # Project documentation
 
-Follow these steps:
+yaml
+Copy code
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📸 Screenshots
 
-# Step 3: Install the necessary dependencies.
-npm i
+(Add screenshots here after running your portfolio locally)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+## 🚦 Getting Started
+
+Follow these steps to run the project locally:
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/swatejsr/portfolio.git
+cd portfolio
+2️⃣ Install Dependencies
+bash
+Copy code
+npm install
+3️⃣ Run the Development Server
+bash
+Copy code
 npm run dev
-```
+4️⃣ Build for Production
+bash
+Copy code
+npm run build
+📬 Contact
+Email: swatejsingh91@gmail.com
 
-**Edit a file directly in GitHub**
+LinkedIn: linkedin.com/in/swatejsingh91
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+GitHub: github.com/swatejsr
 
-**Use GitHub Codespaces**
+⭐ If you like my portfolio, consider connecting with me on LinkedIn or checking out my work on GitHub.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+yaml
+Copy code
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+👉 This README will look **professional on GitHub** and recruiters can quickly see your skills + projects.  
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/4ae8d993-2be9-416c-aee8-83070b8edeba) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Do you also want me to **add a “Deployed Link” section** at the top (for Netlify/Vercel/GitHub Pages
