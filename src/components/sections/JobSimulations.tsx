@@ -1,94 +1,83 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Award, Building2, ExternalLink } from "lucide-react";
+import { Calendar, Building2, ExternalLink } from "lucide-react";
 
-const Certifications = () => {
-const certifications = [
+const JobSimulations = () => {
+  const jobSimulations = [
     {
-      title: "Cybersecurity Fundamentals",
-      issuer: "IBM",
+      title: "Cybersecurity Analyst",
+      company: "Tata Group",
+      platform: "Forage",
       date: "2024",
-      skills: ["Network Security", "Risk Management", "Incident Response"],
-      description: "Comprehensive cybersecurity fundamentals covering threat detection and response strategies.",
+      skills: ["Threat Detection", "Risk Assessment", "Security Analysis", "Incident Response"],
+      description: "Comprehensive cybersecurity simulation focusing on threat analysis and security protocols.",
       link: "#" // Add actual link if available
     },
     {
-      title: "Cloud Security Specialist",
-      issuer: "AWS",
+      title: "Shield Up: Cybersecurity",
+      company: "AIG",
+      platform: "Forage", 
       date: "2024",
-      skills: ["AWS Security", "Cloud Architecture", "Identity Management"],
-      description: "Advanced cloud security practices and AWS security services implementation.",
+      skills: ["Risk Management", "Security Framework", "Compliance", "Vulnerability Assessment"],
+      description: "Advanced cybersecurity risk management simulation with real-world business scenarios.",
       link: "#"
     },
     {
-      title: "Web Development Bootcamp",
-      issuer: "freeCodeCamp",
-      date: "2023",
-      skills: ["React", "Node.js", "Full Stack Development"],
-      description: "Complete web development certification covering modern frameworks and technologies.",
-      link: "#"
-    },
-    {
-      title: "Penetration Testing Certificate",
-      issuer: "TryHackMe",
+      title: "Software Engineering",
+      company: "Electronic Arts",
+      platform: "Forage",
       date: "2024",
-      skills: ["Ethical Hacking", "Vulnerability Assessment", "OWASP"],
-      description: "Professional penetration testing certification with hands-on practical assessments.",
-      link: "#"
-    },
-    {
-      title: "Digital Forensics Certification",
-      issuer: "CyberDefenders",
-      date: "2024",
-      skills: ["Digital Forensics", "Malware Analysis", "SIEM"],
-      description: "Advanced digital forensics certification covering incident response and threat hunting.",
+      skills: ["Game Development", "Software Engineering", "Python", "Problem Solving"],
+      description: "Software engineering simulation in the gaming industry with hands-on development tasks.",
       link: "#"
     }
   ];
 
-
   return (
-    <section id="certifications" className="py-20 bg-background">
+    <section id="job-simulations" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
-            Certifications
+            Job Simulations
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Professional certifications that validate my expertise in cybersecurity, 
-            web development, and cloud technologies.
+            Hands-on job simulations from leading companies, providing real-world 
+            experience in cybersecurity, software engineering, and business operations.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {certifications.map((cert, index) => (
+          {jobSimulations.map((simulation, index) => (
             <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
               <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center space-x-2">
-                    <Award className="h-5 w-5 text-primary" />
-                    <Badge className="bg-primary/10 text-primary">
-                      Certification
+                    <Building2 className="h-5 w-5 text-primary" />
+                    <Badge className="bg-accent/10 text-accent">
+                      Job Simulation
                     </Badge>
                   </div>
                   <div className="flex items-center text-muted-foreground text-sm">
                     <Calendar className="h-4 w-4 mr-1" />
-                    {cert.date}
+                    {simulation.date}
                   </div>
                 </div>
 
                 <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                  {cert.title}
+                  {simulation.title}
                 </h3>
                 
-                <p className="text-accent font-medium mb-3">{cert.issuer}</p>
+                <div className="mb-3">
+                  <p className="text-primary font-medium">{simulation.company}</p>
+                  <p className="text-muted-foreground text-sm">via {simulation.platform}</p>
+                </div>
                 
                 <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                  {cert.description}
+                  {simulation.description}
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {cert.skills.map((skill, skillIndex) => (
+                  {simulation.skills.map((skill, skillIndex) => (
                     <Badge 
                       key={skillIndex} 
                       variant="outline" 
@@ -99,15 +88,15 @@ const certifications = [
                   ))}
                 </div>
 
-                {cert.link && (
+                {simulation.link && (
                   <div className="flex items-center justify-end">
                     <a 
-                      href={cert.link}
+                      href={simulation.link}
                       className="text-primary hover:text-primary/80 transition-colors text-sm flex items-center space-x-1"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span>View Certificate</span>
+                      <span>View Details</span>
                       <ExternalLink className="h-3 w-3" />
                     </a>
                   </div>
@@ -119,7 +108,7 @@ const certifications = [
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-sm">
-            🏆 More certifications in progress • Always learning and growing
+            💼 More job simulations in progress • Gaining real-world experience
           </p>
         </div>
       </div>
@@ -127,4 +116,4 @@ const certifications = [
   );
 };
 
-export default Certifications;
+export default JobSimulations;
