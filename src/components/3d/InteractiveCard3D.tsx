@@ -1,9 +1,9 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Text3D, Center, OrbitControls } from '@react-three/drei';
+import { Float, OrbitControls } from '@react-three/drei';
 import { useRef, useState } from 'react';
 import * as THREE from 'three';
 
-const Card3D = ({ text, isHovered }: { text: string, isHovered: boolean }) => {
+const Card3D = ({ isHovered }: { isHovered: boolean }) => {
   const meshRef = useRef<THREE.Mesh>(null);
   const groupRef = useRef<THREE.Group>(null);
   
@@ -26,22 +26,28 @@ const Card3D = ({ text, isHovered }: { text: string, isHovered: boolean }) => {
           <meshPhongMaterial 
             color="hsl(var(--primary))" 
             transparent 
+            opacity={0.6}
+          />
+        </mesh>
+        
+        {/* Floating Elements */}
+        <mesh position={[-1, 1, 0]}>
+          <sphereGeometry args={[0.2, 16, 16]} />
+          <meshPhongMaterial 
+            color="hsl(var(--accent))" 
+            transparent 
             opacity={0.8}
           />
         </mesh>
         
-        {/* 3D Text */}
-        <Center>
-          <Text3D
-            font="/fonts/helvetiker_regular.typeface.json"
-            size={0.3}
-            height={0.1}
-            curveSegments={12}
-          >
-            {text}
-            <meshPhongMaterial color="white" />
-          </Text3D>
-        </Center>
+        <mesh position={[1, -0.5, 0]}>
+          <boxGeometry args={[0.3, 0.3, 0.3]} />
+          <meshPhongMaterial 
+            color="hsl(var(--primary-glow))" 
+            transparent 
+            opacity={0.7}
+          />
+        </mesh>
       </Float>
     </group>
   );
@@ -67,7 +73,7 @@ const InteractiveCard3D = ({ text, className = "", children }: InteractiveCard3D
           <ambientLight intensity={0.4} />
           <directionalLight position={[5, 5, 5]} intensity={0.8} />
           
-          <Card3D text={text} isHovered={isHovered} />
+          <Card3D isHovered={isHovered} />
           
           <OrbitControls 
             enableZoom={false} 
