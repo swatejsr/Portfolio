@@ -3,7 +3,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import profileImage from "@/assets/swatej-profile.jpg";
 import FloatingGeometry from "@/components/3d/FloatingGeometry";
-import CyberSecurityScene from "@/components/3d/CyberSecurityScene";
+import CyberMatrix3D from "@/components/3d/CyberMatrix3D";
 
 const Hero = () => {
   const handleDownloadCV = () => {
@@ -31,9 +31,11 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center gradient-hero relative overflow-hidden">
-      {/* Advanced 3D Background Elements */}
+      {/* Unique 3D Cyber Matrix Background */}
+      <div className="absolute inset-0 opacity-30">
+        <CyberMatrix3D />
+      </div>
       <FloatingGeometry />
-      <CyberSecurityScene />
       
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
