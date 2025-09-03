@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Calendar, Building2 } from "lucide-react";
+import InteractiveCard3D from "@/components/3d/InteractiveCard3D";
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -183,77 +184,82 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="shadow-card border-0 gradient-card transition-spring hover:shadow-elegant card-3d hover-3d floating-3d animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+            <InteractiveCard3D
+              key={index}
+              text={project.title}
+              className={`animate-fade-in`}
             >
-              <CardHeader>
-                <div className="flex justify-between items-start mb-2">
-                  <CardTitle className="text-lg font-semibold text-foreground tilt-effect">
-                    {project.title}
-                  </CardTitle>
-                  <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20 pulse-glow">
-                    {project.status}
-                  </Badge>
-                </div>
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <Calendar className="h-4 w-4 mr-2 wiggle-effect" />
-                  {project.period}
-                </div>
-              </CardHeader>
-              
-              <CardContent>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge 
-                      key={techIndex} 
-                      variant="outline" 
-                      className="text-xs border-accent/30 text-accent hover-3d transition-spring"
-                    >
-                      {tech}
+              <Card 
+                className="shadow-card border-0 gradient-card transition-spring hover:shadow-elegant card-3d hover-3d floating-3d relative z-10"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardHeader>
+                  <div className="flex justify-between items-start mb-2">
+                    <CardTitle className="text-lg font-semibold text-foreground tilt-effect">
+                      {project.title}
+                    </CardTitle>
+                    <Badge variant="secondary" className="bg-accent/10 text-accent border-accent/20 pulse-glow">
+                      {project.status}
                     </Badge>
-                  ))}
-                </div>
+                  </div>
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4 mr-2 wiggle-effect" />
+                    {project.period}
+                  </div>
+                </CardHeader>
+                
+                <CardContent>
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                    {project.description}
+                  </p>
 
-                {/* Key Features */}
-                <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-foreground mb-2">Key Features:</h4>
-                  <ul className="text-xs text-muted-foreground space-y-1">
-                    {project.features.slice(0, 3).map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center hover-3d transition-spring">
-                        <div className="w-1 h-1 bg-accent rounded-full mr-2 pulse-glow"></div>
-                        {feature}
-                      </li>
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <Badge 
+                        key={techIndex} 
+                        variant="outline" 
+                        className="text-xs border-accent/30 text-accent hover-3d transition-spring"
+                      >
+                        {tech}
+                      </Badge>
                     ))}
-                  </ul>
-                </div>
+                  </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <Button 
-                    size="sm" 
-                    variant="outline"
-                    className="flex-1 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground card-3d magnetic-hover transition-spring"
-                  >
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
-                  <Button 
-                    size="sm"
-                    className="flex-1 bg-accent hover:bg-accent-glow text-accent-foreground card-3d magnetic-hover transition-spring"
-                  >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                  {/* Key Features */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-foreground mb-2">Key Features:</h4>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      {project.features.slice(0, 3).map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center hover-3d transition-spring">
+                          <div className="w-1 h-1 bg-accent rounded-full mr-2 pulse-glow"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-3">
+                    <Button 
+                      size="sm" 
+                      variant="outline"
+                      className="flex-1 border-accent/30 text-accent hover:bg-accent hover:text-accent-foreground card-3d magnetic-hover transition-spring"
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </Button>
+                    <Button 
+                      size="sm"
+                      className="flex-1 bg-accent hover:bg-accent-glow text-accent-foreground card-3d magnetic-hover transition-spring"
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Live
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </InteractiveCard3D>
           ))}
         </div>
 

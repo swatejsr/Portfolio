@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import profileImage from "@/assets/swatej-profile.jpg";
+import FloatingGeometry from "@/components/3d/FloatingGeometry";
+import CyberSecurityScene from "@/components/3d/CyberSecurityScene";
 
 const Hero = () => {
   const handleDownloadCV = () => {
@@ -29,6 +31,10 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center gradient-hero relative overflow-hidden">
+      {/* Advanced 3D Background Elements */}
+      <FloatingGeometry />
+      <CyberSecurityScene />
+      
       {/* Enhanced animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl floating-3d morphing-blob"></div>

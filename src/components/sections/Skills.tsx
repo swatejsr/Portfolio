@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Code2, Shield, Globe, Database, Cloud, Laptop } from "lucide-react";
+import SkillOrb3D from "@/components/3d/SkillOrb3D";
+import InteractiveCard3D from "@/components/3d/InteractiveCard3D";
 
 const Skills = () => {
   const skillCategories = [
@@ -66,30 +68,51 @@ const Skills = () => {
         {/* Skills Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="shadow-card border-0 bg-card animate-slide-up card-3d hover-3d">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="p-2 rounded-lg bg-accent/10 text-accent mr-4 skill-orb">
-                    {category.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
-                </div>
-                
-                <div className="space-y-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="hover-3d transition-spring">
-                      <div className="flex justify-between items-center mb-2">
-                        <span className="font-medium text-foreground">{skill.name}</span>
-                        <span className="text-sm text-accent font-semibold pulse-glow">{skill.level}%</span>
-                      </div>
-                      <Progress value={skill.level} className="mb-1" />
-                      <p className="text-xs text-muted-foreground">{skill.description}</p>
+            <InteractiveCard3D 
+              key={index}
+              text={category.title}
+            >
+              <Card className="shadow-card border-0 bg-card animate-slide-up card-3d hover-3d">
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="p-2 rounded-lg bg-accent/10 text-accent mr-4 skill-orb">
+                      {category.icon}
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    <h3 className="text-xl font-semibold text-foreground">{category.title}</h3>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div key={skillIndex} className="hover-3d transition-spring">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="font-medium text-foreground">{skill.name}</span>
+                          <span className="text-sm text-accent font-semibold pulse-glow">{skill.level}%</span>
+                        </div>
+                        <Progress value={skill.level} className="mb-1" />
+                        <p className="text-xs text-muted-foreground">{skill.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </InteractiveCard3D>
           ))}
+        </div>
+
+        {/* 3D Skill Orbs */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-foreground text-center mb-8 animate-fade-in hover-3d">
+            Featured Technologies
+          </h3>
+          <div className="flex flex-wrap justify-center gap-8">
+            {['React', 'Python', 'Security', 'Cloud', 'C++', 'Firebase'].map((skill, index) => (
+              <SkillOrb3D 
+                key={skill} 
+                skill={skill}
+                className="animate-scale-in"
+              />
+            ))}
+          </div>
         </div>
 
         {/* Learning Path */}
