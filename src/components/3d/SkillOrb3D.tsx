@@ -1,34 +1,7 @@
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Sphere, Text } from '@react-three/drei';
-import { useRef, useState, Suspense, useEffect, useState as useReactState } from 'react';
+import { useRef, useState, Suspense } from 'react';
 import * as THREE from 'three';
-
-export default function TestCanvas() {
-  return (
-    <div className="w-32 h-32 bg-black">
-      <Canvas camera={{ position: [0, 0, 3] }}>
-        <ambientLight />
-        <mesh>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="orange" />
-        </mesh>
-        <OrbitControls />
-      </Canvas>
-    </div>
-  );
-}
-// Utility: Check if WebGL works
-const isWebGLAvailable = () => {
-  try {
-    const canvas = document.createElement('canvas');
-    return !!(
-      window.WebGLRenderingContext &&
-      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
-    );
-  } catch {
-    return false;
-  }
-};
 
 const Orb = ({ skill, isHovered }: { skill: string; isHovered: boolean }) => {
   const orbRef = useRef<THREE.Mesh>(null);
@@ -87,42 +60,36 @@ interface SkillOrb3DProps {
 
 const SkillOrb3D = ({ skill, className = '' }: SkillOrb3DProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [webglSupported, setWebglSupported] = useReactState(true);
 
-  useEffect(() => {
-    setWebglSupported(isWebGLAvailable());
-  }, []);
-
-  if (!webglSupported) {
-    // ✅ Fallback UI for mobile without WebGL
-    return (
+  return (
+    <>
+      {/* Mobile Fallback */}
       <div
-        className={`flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-lg text-white font-bold ${className}`}
+        className={`flex md:hidden items-center justify-center w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-lg text-white font-bold animate-pulse ${className}`}
       >
         {skill}
       </div>
-    );
-  }
 
-  return (
-    <div
-      className={`relative w-24 h-24 sm:w-32 sm:h-32 ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onTouchStart={() => setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
-    >
-      <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
-        <ambientLight intensity={0.4} />
-        <directionalLight position={[5, 5, 5]} intensity={1} />
-        <pointLight
-          position={[-5, -5, -5]}
-          intensity={0.5}
-          color="hsl(var(--accent))"
-        />
-        <Orb skill={skill} isHovered={isHovered} />
-      </Canvas>
-    </div>
+      {/* Desktop 3D Orb */}
+      <div
+        className={`relative hidden md:block w-24 h-24 sm:w-32 sm:h-32 ${className}`}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setIsHovered(false)}
+      >
+        <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
+          <ambientLight intensity={0.4} />
+          <directionalLight position={[5, 5, 5]} intensity={1} />
+          <pointLight
+            position={[-5, -5, -5]}
+            intensity={0.5}
+            color="hsl(var(--accent))"
+          />
+          <Orb skill={skill} isHovered={isHovered} />
+        </Canvas>
+      </div>
+    </>
   );
 };
 
