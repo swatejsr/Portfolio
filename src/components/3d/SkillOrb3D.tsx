@@ -3,6 +3,20 @@ import { Float, Sphere, Text } from '@react-three/drei';
 import { useRef, useState, Suspense, useEffect, useState as useReactState } from 'react';
 import * as THREE from 'three';
 
+export default function TestCanvas() {
+  return (
+    <div className="w-32 h-32 bg-black">
+      <Canvas camera={{ position: [0, 0, 3] }}>
+        <ambientLight />
+        <mesh>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color="orange" />
+        </mesh>
+        <OrbitControls />
+      </Canvas>
+    </div>
+  );
+}
 // Utility: Check if WebGL works
 const isWebGLAvailable = () => {
   try {
