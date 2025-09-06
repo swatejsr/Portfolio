@@ -10,6 +10,9 @@ const Navigation = () => {
     { id: "home", label: "Home" },
     { id: "about", label: "About" },
     { id: "skills", label: "Skills" },
+    { id: "practice", label: "Practice Platforms" },
+    { id: "certifications", label: "Certifications" },
+    { id: "job-simulations", label: "Job Simulations" },
     { id: "projects", label: "Projects" },
     { id: "contact", label: "Contact" },
   ];

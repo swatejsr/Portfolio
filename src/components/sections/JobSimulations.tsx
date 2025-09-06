@@ -8,10 +8,10 @@ const JobSimulations = () => {
       title: "Cybersecurity Analyst",
       company: "Tata Group",
       platform: "Forage",
-      date: "2024",
+      date: "Apr 27,2025",
       skills: ["Threat Detection", "Risk Assessment", "Security Analysis", "Incident Response"],
       description: "Comprehensive cybersecurity simulation focusing on threat analysis and security protocols.",
-      link: "#" // Add actual link if available
+      link: "https://drive.google.com/file/d/1P7fEwy6H2JBJuey_uSegfhftpPzWby79/view?usp=sharing"
     },
     {
       title: "Shield Up: Cybersecurity",
@@ -20,16 +20,16 @@ const JobSimulations = () => {
       date: "2024",
       skills: ["Risk Management", "Security Framework", "Compliance", "Vulnerability Assessment"],
       description: "Advanced cybersecurity risk management simulation with real-world business scenarios.",
-      link: "#"
+      link: "https://drive.google.com/file/d/1lbmltivcmLWkO-ueU11Qyf_3Bqsngcs6/view?usp=drive_link"
     },
     {
       title: "Software Engineering",
       company: "Electronic Arts",
       platform: "Forage",
-      date: "2024",
+      date: "Apr 27,2025",
       skills: ["Game Development", "Software Engineering", "Python", "Problem Solving"],
       description: "Software engineering simulation in the gaming industry with hands-on development tasks.",
-      link: "#"
+      link: "https://drive.google.com/file/d/14kQWsgFNb8YR8uRDLbTE7jj2PWBr5dqZ/view?usp=drive_link"
     }
   ];
 

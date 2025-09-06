@@ -28,7 +28,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-muted-foreground text-sm">
-              © 2024 Swatej Singh. Built with passion for technology and cybersecurity.
+              © 2025 Swatej Singh. Built with passion for technology and cybersecurity.
             </p>
             <p className="text-muted-foreground text-xs mt-2">
               Designed & Developed with React, TypeScript, and Tailwind CSS
