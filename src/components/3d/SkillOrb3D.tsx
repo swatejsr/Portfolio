@@ -6,12 +6,15 @@ import * as THREE from 'three';
 const Orb = ({ skill, isHovered }: { skill: string, isHovered: boolean }) => {
   const orbRef = useRef<THREE.Mesh>(null);
   const textRef = useRef<THREE.Mesh>(null);
-  
+
   useFrame((state) => {
     if (orbRef.current) {
       orbRef.current.rotation.x = state.clock.elapsedTime * 0.3;
       orbRef.current.rotation.y = state.clock.elapsedTime * 0.2;
-      orbRef.current.scale.setScalar(isHovered ? 1.3 : 1);
+
+      // Always pulsing slightly + extra scale on hover/tap
+      const pulse = 1 + Math.sin(state.clock.elapsedTime * 2) * 0.05;
+      orbRef.current.scale.setScalar(pulse + (isHovered ? 0.3 : 0));
     }
     if (textRef.current) {
       textRef.current.lookAt(state.camera.position);
@@ -30,7 +33,7 @@ const Orb = ({ skill, isHovered }: { skill: string, isHovered: boolean }) => {
           emissiveIntensity={0.2}
         />
       </Sphere>
-      
+
       {/* Outer Ring */}
       <mesh rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[1.5, 0.05, 16, 32]} />
@@ -40,7 +43,7 @@ const Orb = ({ skill, isHovered }: { skill: string, isHovered: boolean }) => {
           opacity={0.6}
         />
       </mesh>
-      
+
       {/* Skill Text */}
       <Text
         ref={textRef}
@@ -66,9 +69,11 @@ const SkillOrb3D = ({ skill, className = "" }: SkillOrb3DProps) => {
 
   return (
     <div 
-      className={`relative w-32 h-32 ${className}`}
+      className={`relative w-24 h-24 sm:w-32 sm:h-32 ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
     >
       <Canvas camera={{ position: [0, 0, 4], fov: 50 }}>
         <ambientLight intensity={0.4} />
