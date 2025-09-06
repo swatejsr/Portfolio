@@ -52,20 +52,20 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-16">
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end animate-slide-in-left">
-            <div className="relative group hover-3d">
-              <Avatar className="w-80 h-80 ring-4 ring-primary/30 shadow-elegant hover-glow transition-spring relative z-10 card-3d">
-                <AvatarImage
-                  src={profileImage}
-                  alt="Swatej Singh - Cybersecurity & Web Development Enthusiast"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <AvatarFallback className="text-6xl font-bold bg-primary text-primary-foreground">
-                  SS
-                </AvatarFallback>
-              </Avatar>
-            </div>
-          </div>
+<div className="flex justify-center items-center animate-slide-in-left w-full lg:w-auto">
+  <div className="relative group hover-3d">
+    <Avatar className="w-80 h-80 sm:w-96 sm:h-96 ring-4 ring-primary/30 shadow-elegant hover-glow transition-spring relative z-10">
+      <AvatarImage
+        src={profileImage}
+        alt="Swatej Singh - Cybersecurity & Web Development Enthusiast"
+        className="w-full h-full object-cover object-center rounded-full transition-transform duration-500 group-hover:scale-110"
+      />
+      <AvatarFallback className="text-6xl font-bold bg-primary text-primary-foreground rounded-full">
+        SS
+      </AvatarFallback>
+    </Avatar>
+  </div>
+</div>
 
           {/* Text Content */}
           <div className="text-center lg:text-left animate-slide-in-right">
