@@ -8,7 +8,7 @@ import CyberMatrix3D from "@/components/3d/CyberMatrix3D";
 const Hero = () => {
   const handleViewResume = () => {
     window.open(
-      "https://drive.google.com/file/d/1sPXeTBY8C1u6ZeLRVE_yOAi-irqT9z8M/view?usp=drive_link",
+      "https://drive.google.com/file/d/1n2EPpwxB82QN_eZGu2dbnFScTX573zFZ/view?usp=drive_link",
       "_blank"
     );
   };
