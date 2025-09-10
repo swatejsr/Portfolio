@@ -213,6 +213,33 @@ export default {
 						transform: 'translateX(300px) translateY(300px)',
 						opacity: '0'
 					}
+				},
+				'twinkle': {
+					'0%, 100%': { 
+						opacity: '0.3',
+						transform: 'scale(0.8)'
+					},
+					'50%': { 
+						opacity: '1',
+						transform: 'scale(1.2)'
+					}
+				},
+				'drift': {
+					'0%': {
+						transform: 'translateX(0) translateY(0)'
+					},
+					'25%': {
+						transform: 'translateX(50px) translateY(-30px)'
+					},
+					'50%': {
+						transform: 'translateX(-20px) translateY(-60px)'
+					},
+					'75%': {
+						transform: 'translateX(-50px) translateY(-30px)'
+					},
+					'100%': {
+						transform: 'translateX(0) translateY(0)'
+					}
 				}
 			},
 			animation: {
@@ -231,7 +258,9 @@ export default {
 				'wiggle': 'wiggle 1s ease-in-out infinite',
 				'tilt': 'tilt 4s ease-in-out infinite',
 				'morph': 'morph 8s ease-in-out infinite',
-				'shootingStar': 'shootingStar 3s linear infinite'
+				'shootingStar': 'shootingStar 3s linear infinite',
+				'twinkle': 'twinkle 2s ease-in-out infinite',
+				'drift': 'drift 15s ease-in-out infinite'
 			}
 		}
 	},

@@ -178,6 +178,35 @@
       opacity: 0;
     }
   }
+  
+  @keyframes twinkle {
+    0%, 100% { 
+      opacity: 0.3; 
+      transform: scale(0.8);
+    }
+    50% { 
+      opacity: 1; 
+      transform: scale(1.2);
+    }
+  }
+  
+  @keyframes drift {
+    0% {
+      transform: translateX(0) translateY(0);
+    }
+    25% {
+      transform: translateX(50px) translateY(-30px);
+    }
+    50% {
+      transform: translateX(-20px) translateY(-60px);
+    }
+    75% {
+      transform: translateX(-50px) translateY(-30px);
+    }
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
 }
 
 /* Section Specific Styling */
