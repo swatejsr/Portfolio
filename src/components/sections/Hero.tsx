@@ -4,6 +4,7 @@ import { Github, Linkedin, Mail, FileText } from "lucide-react";
 import profileImage from "@/assets/swatej-profile.jpg";
 import FloatingGeometry from "@/components/3d/FloatingGeometry";
 import CyberMatrix3D from "@/components/3d/CyberMatrix3D";
+import ComputersCanvas from "@/components/3d/Computer";
 
 const Hero = () => {
   const handleViewResume = () => {
@@ -36,9 +37,9 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* 3D Cyber Matrix Background */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <CyberMatrix3D />
+      {/* 3D Computer Background */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <ComputersCanvas />
       </div>
       <FloatingGeometry />
 

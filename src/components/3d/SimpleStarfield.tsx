@@ -25,17 +25,17 @@ const SimpleStarfield = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[-10] overflow-hidden">
-      {/* Deep space gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900/50 to-slate-900" />
+    <div className="fixed inset-0 w-full h-full overflow-hidden pointer-events-none z-[-1]">
+      {/* Deeper Space Background - Much darker */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-950 to-slate-950"></div>
       
-      {/* Animated stars with multiple layers */}
+      {/* Stars */}
       {stars.map((star) => (
         <div
           key={star.id}
-          className={`absolute rounded-full ${
-            star.layer === 1 ? 'bg-cyan-200' : 
-            star.layer === 2 ? 'bg-blue-200' : 'bg-white'
+          className={`absolute rounded-full animate-twinkle ${
+            star.layer === 1 ? 'bg-blue-300 shadow-[0_0_6px_#93c5fd]' : 
+            star.layer === 2 ? 'bg-white shadow-[0_0_4px_#ffffff]' : 'bg-yellow-200 shadow-[0_0_5px_#fef08a]'
           }`}
           style={{
             left: `${star.left}%`,
@@ -43,80 +43,63 @@ const SimpleStarfield = () => {
             width: `${star.size}px`,
             height: `${star.size}px`,
             animationDelay: `${star.animationDelay}s`,
-            boxShadow: `0 0 ${star.size * 3}px ${
-              star.layer === 1 ? 'rgba(0, 255, 255, 0.8)' : 
-              star.layer === 2 ? 'rgba(100, 149, 237, 0.6)' : 'rgba(255, 255, 255, 0.4)'
-            }`,
-            animation: `twinkle ${star.speed}s linear infinite, float ${star.speed * 2}s ease-in-out infinite`,
+            animationDuration: `${star.speed}s`,
           }}
         />
       ))}
+
+      {/* Solar System Planets */}
+      <div className="absolute w-8 h-8 rounded-full bg-orange-400 shadow-[0_0_20px_#fb923c] animate-drift planet-mercury" 
+           style={{ left: '15%', top: '30%', animationDelay: '0s', animationDuration: '25s' }}></div>
       
-      {/* Multiple shooting stars */}
-      {[...Array(8)].map((_, i) => (
-        <div
-          key={`shooting-${i}`}
-          className="absolute w-2 h-0.5 bg-gradient-to-r from-cyan-400 to-transparent opacity-0"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animation: `shootingStar ${3 + Math.random() * 2}s linear infinite ${i * 1.5}s`,
-            transform: 'rotate(45deg)',
-          }}
-        />
-      ))}
+      <div className="absolute w-12 h-12 rounded-full bg-yellow-300 shadow-[0_0_25px_#fde047] animate-drift planet-venus" 
+           style={{ left: '75%', top: '20%', animationDelay: '5s', animationDuration: '35s' }}></div>
       
-      {/* Floating particles */}
-      {[...Array(50)].map((_, i) => (
-        <div
-          key={`particle-${i}`}
-          className="absolute w-1 h-1 bg-cyan-300/30 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animation: `drift ${20 + Math.random() * 30}s linear infinite ${Math.random() * 10}s`,
-          }}
-        />
-      ))}
+      <div className="absolute w-14 h-14 rounded-full bg-blue-500 shadow-[0_0_30px_#3b82f6] animate-drift planet-earth" 
+           style={{ left: '25%', top: '70%', animationDelay: '10s', animationDuration: '40s' }}></div>
       
-      {/* Large nebula clouds with rotation */}
-      <div className="absolute inset-0 opacity-20">
-        <div 
-          className="absolute top-0 left-0 w-[800px] h-[800px] bg-purple-500/20 rounded-full blur-3xl"
-          style={{
-            animation: 'rotate-slow 60s linear infinite, pulse 8s ease-in-out infinite',
-          }}
-        />
-        <div 
-          className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-500/20 rounded-full blur-3xl"
-          style={{
-            animation: 'rotate-slow 80s linear infinite reverse, pulse 6s ease-in-out infinite',
-          }}
-        />
-        <div 
-          className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-blue-500/15 rounded-full blur-3xl"
-          style={{
-            animation: 'rotate-slow 100s linear infinite, pulse 10s ease-in-out infinite',
-          }}
-        />
+      <div className="absolute w-10 h-10 rounded-full bg-red-500 shadow-[0_0_22px_#ef4444] animate-drift planet-mars" 
+           style={{ left: '80%', top: '60%', animationDelay: '15s', animationDuration: '30s' }}></div>
+      
+      <div className="absolute w-20 h-20 rounded-full bg-yellow-600 shadow-[0_0_40px_#ca8a04] animate-drift planet-jupiter" 
+           style={{ left: '10%', top: '10%', animationDelay: '20s', animationDuration: '50s' }}></div>
+      
+      <div className="absolute w-18 h-18 rounded-full bg-yellow-500 shadow-[0_0_35px_#eab308] animate-drift planet-saturn" 
+           style={{ left: '60%', top: '80%', animationDelay: '25s', animationDuration: '45s' }}>
+        <div className="absolute inset-0 rounded-full border-2 border-yellow-400/50 scale-150"></div>
       </div>
       
-      {/* Cosmic dust layers */}
-      <div className="absolute inset-0 opacity-30">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={`dust-${i}`}
-            className="absolute bg-gradient-to-r from-cyan-200/10 to-purple-200/10 rounded-full blur-sm"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: `${50 + Math.random() * 100}px`,
-              height: `${20 + Math.random() * 40}px`,
-              animation: `drift ${40 + Math.random() * 20}s linear infinite ${Math.random() * 10}s`,
-            }}
-          />
-        ))}
-      </div>
+      <div className="absolute w-16 h-16 rounded-full bg-cyan-400 shadow-[0_0_32px_#22d3ee] animate-drift planet-uranus" 
+           style={{ left: '85%', top: '15%', animationDelay: '30s', animationDuration: '55s' }}></div>
+      
+      <div className="absolute w-15 h-15 rounded-full bg-blue-600 shadow-[0_0_28px_#2563eb] animate-drift planet-neptune" 
+           style={{ left: '35%', top: '5%', animationDelay: '35s', animationDuration: '60s' }}></div>
+
+      {/* Shooting Stars */}
+      <div className="shooting-star animate-shootingStar"></div>
+      <div className="shooting-star animate-shootingStar" style={{ animationDelay: '3s', top: '20%' }}></div>
+      <div className="shooting-star animate-shootingStar" style={{ animationDelay: '6s', top: '60%' }}></div>
+      <div className="shooting-star animate-shootingStar" style={{ animationDelay: '9s', top: '80%' }}></div>
+      <div className="shooting-star animate-shootingStar" style={{ animationDelay: '12s', top: '30%' }}></div>
+      <div className="shooting-star animate-shootingStar" style={{ animationDelay: '15s', top: '70%' }}></div>
+      <div className="shooting-star animate-shootingStar" style={{ animationDelay: '18s', top: '10%' }}></div>
+      <div className="shooting-star animate-shootingStar" style={{ animationDelay: '21s', top: '90%' }}></div>
+
+      {/* Floating Particles */}
+      <div className="floating-particle animate-float" style={{ left: '10%', top: '20%', animationDelay: '0s' }}></div>
+      <div className="floating-particle animate-float" style={{ left: '30%', top: '40%', animationDelay: '2s' }}></div>
+      <div className="floating-particle animate-float" style={{ left: '60%', top: '10%', animationDelay: '4s' }}></div>
+      <div className="floating-particle animate-float" style={{ left: '80%', top: '70%', animationDelay: '6s' }}></div>
+      <div className="floating-particle animate-float" style={{ left: '20%', top: '80%', animationDelay: '8s' }}></div>
+
+      {/* Large Nebula Clouds */}
+      <div className="nebula-cloud animate-drift" style={{ left: '-10%', top: '20%', animationDelay: '0s' }}></div>
+      <div className="nebula-cloud animate-drift" style={{ left: '70%', top: '50%', animationDelay: '10s' }}></div>
+      <div className="nebula-cloud animate-drift" style={{ left: '30%', top: '10%', animationDelay: '20s' }}></div>
+
+      {/* Cosmic Dust Layers */}
+      <div className="cosmic-dust animate-drift" style={{ left: '0%', top: '40%', animationDelay: '5s' }}></div>
+      <div className="cosmic-dust animate-drift" style={{ left: '50%', top: '70%', animationDelay: '15s' }}></div>
     </div>
   );
 };
