@@ -7,12 +7,12 @@ import Certifications from "@/components/sections/Certifications";
 import JobSimulations from "@/components/sections/JobSimulations";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
-import StarsCanvas from "@/components/3d/StarsCanvas";
+import SimpleStarfield from "@/components/3d/SimpleStarfield";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative">
-      <StarsCanvas />
+      <SimpleStarfield />
       <Navigation />
       <main>
         <Hero />

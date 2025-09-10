@@ -203,6 +203,16 @@ export default {
 					'50%': {
 						borderRadius: '30% 60% 70% 40%/50% 60% 30% 60%'
 					}
+				},
+				'shootingStar': {
+					'0%': {
+						transform: 'translateX(0) translateY(0)',
+						opacity: '1'
+					},
+					'100%': {
+						transform: 'translateX(300px) translateY(300px)',
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
@@ -220,7 +230,8 @@ export default {
 				'gradient-shift': 'gradient-shift 3s ease-in-out infinite',
 				'wiggle': 'wiggle 1s ease-in-out infinite',
 				'tilt': 'tilt 4s ease-in-out infinite',
-				'morph': 'morph 8s ease-in-out infinite'
+				'morph': 'morph 8s ease-in-out infinite',
+				'shootingStar': 'shootingStar 3s linear infinite'
 			}
 		}
 	},
