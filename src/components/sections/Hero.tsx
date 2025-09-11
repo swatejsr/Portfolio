@@ -35,19 +35,18 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-card via-background to-card/80"
     >
-      {/* 3D Computer Background */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <ComputersCanvas />
+      {/* Professional tech grid background */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(190,190,190,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(190,190,190,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       </div>
-      <FloatingGeometry />
 
-      {/* Subtle background blobs */}
+      {/* Subtle tech accent elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-72 h-72 bg-primary/10 rounded-full blur-3xl floating-3d"></div>
-        <div className="absolute -bottom-40 -left-40 w-72 h-72 bg-accent/10 rounded-full blur-3xl parallax-slow"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-32 h-32 border border-primary/20 rounded-lg rotate-45"></div>
+        <div className="absolute bottom-20 left-20 w-24 h-24 border border-accent/20 rounded-full"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/5 rounded-lg blur-sm"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">

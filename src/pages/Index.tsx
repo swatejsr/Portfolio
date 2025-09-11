@@ -13,18 +13,24 @@ import SimpleStarfield from "@/components/3d/SimpleStarfield";
 const Index = () => {
   return (
     <div className="min-h-screen relative">
-      <SimpleStarfield />
+      {/* Space background only for non-hero sections */}
+      <div className="absolute inset-0 z-[-2]">
+        <SimpleStarfield />
+      </div>
+      
       <Navigation />
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <PracticePlatforms />
-        <Certifications />
-        <JobSimulations />
-        <Projects />
-        <EarthSection />
-        <Contact />
+        <div className="relative z-10 bg-gradient-to-b from-background/95 via-background/98 to-background/95 backdrop-blur-sm">
+          <About />
+          <Skills />
+          <PracticePlatforms />
+          <Certifications />
+          <JobSimulations />
+          <Projects />
+          <EarthSection />
+          <Contact />
+        </div>
       </main>
       
       {/* Footer */}

@@ -5,22 +5,22 @@
 /* Base Design System */
 @layer base {
   :root {
-    /* Base colors - Dark Professional Theme */
-    --background: 265 25% 12%;       /* deep midnight blue */
-    --foreground: 0 0% 98%;          /* almost white */
-    --card: 265 25% 18%;
-    --card-foreground: 0 0% 95%;
-    --border: 222 47% 18%;
-    --input: 222 47% 18%;
-    --ring: 190 90% 55%;             /* cyan ring */
+    /* Base colors - Professional Tech Theme */
+    --background: 224 20% 8%;        /* deep tech dark */
+    --foreground: 0 0% 96%;          /* clean white */
+    --card: 224 20% 12%;             /* darker card */
+    --card-foreground: 0 0% 94%;
+    --border: 224 15% 20%;           /* subtle borders */
+    --input: 224 15% 18%;
+    --ring: 200 98% 65%;             /* electric blue ring */
 
-    --primary: 190 90% 55%;          /* cyan */
-    --primary-foreground: 222 47% 8%;
-    --primary-glow: 190 90% 70%;
+    --primary: 200 98% 65%;          /* electric blue */
+    --primary-foreground: 224 20% 8%;
+    --primary-glow: 200 98% 75%;
 
-    --accent: 290 80% 60%;           /* soft purple accent */
-    --accent-foreground: 0 0% 10%;
-    --accent-glow: 280 80% 75%;
+    --accent: 280 90% 70%;           /* vibrant purple */
+    --accent-foreground: 224 20% 8%;
+    --accent-glow: 280 90% 80%;
 
     --muted: 222 47% 15%;
     --muted-foreground: 222 10% 70%;
@@ -45,8 +45,8 @@
 
   body {
     @apply font-sans text-foreground;
-    /* Global Background */
-    background: linear-gradient(135deg, hsl(265, 25%, 12%), hsl(265, 25%, 25%));
+    /* Professional Tech Background */
+    background: linear-gradient(135deg, hsl(224, 20%, 8%), hsl(224, 20%, 14%));
   }
 
   * {

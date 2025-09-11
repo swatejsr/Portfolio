@@ -52,32 +52,6 @@ const SimpleStarfield = () => {
         />
       ))}
 
-      {/* Solar System Planets */}
-      <div className="absolute w-8 h-8 rounded-full bg-orange-400 shadow-[0_0_20px_#fb923c] animate-drift planet-mercury" 
-           style={{ left: '15%', top: '30%', animationDelay: '0s', animationDuration: '25s' }}></div>
-      
-      <div className="absolute w-12 h-12 rounded-full bg-yellow-300 shadow-[0_0_25px_#fde047] animate-drift planet-venus" 
-           style={{ left: '75%', top: '20%', animationDelay: '5s', animationDuration: '35s' }}></div>
-      
-      <div className="absolute w-14 h-14 rounded-full bg-blue-500 shadow-[0_0_30px_#3b82f6] animate-drift planet-earth" 
-           style={{ left: '25%', top: '70%', animationDelay: '10s', animationDuration: '40s' }}></div>
-      
-      <div className="absolute w-10 h-10 rounded-full bg-red-500 shadow-[0_0_22px_#ef4444] animate-drift planet-mars" 
-           style={{ left: '80%', top: '60%', animationDelay: '15s', animationDuration: '30s' }}></div>
-      
-      <div className="absolute w-20 h-20 rounded-full bg-yellow-600 shadow-[0_0_40px_#ca8a04] animate-drift planet-jupiter" 
-           style={{ left: '10%', top: '10%', animationDelay: '20s', animationDuration: '50s' }}></div>
-      
-      <div className="absolute w-18 h-18 rounded-full bg-yellow-500 shadow-[0_0_35px_#eab308] animate-drift planet-saturn" 
-           style={{ left: '60%', top: '80%', animationDelay: '25s', animationDuration: '45s' }}>
-        <div className="absolute inset-0 rounded-full border-2 border-yellow-400/50 scale-150"></div>
-      </div>
-      
-      <div className="absolute w-16 h-16 rounded-full bg-cyan-400 shadow-[0_0_32px_#22d3ee] animate-drift planet-uranus" 
-           style={{ left: '85%', top: '15%', animationDelay: '30s', animationDuration: '55s' }}></div>
-      
-      <div className="absolute w-15 h-15 rounded-full bg-blue-600 shadow-[0_0_28px_#2563eb] animate-drift planet-neptune" 
-           style={{ left: '35%', top: '5%', animationDelay: '35s', animationDuration: '60s' }}></div>
 
       {/* Shooting Stars */}
       <div className="shooting-star animate-shootingStar"></div>

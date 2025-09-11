@@ -19,46 +19,66 @@ const Earth = () => {
 
   return (
     <group ref={earthRef} scale={2.5} position-y={0}>
-      {/* Earth Surface */}
+      {/* Earth Surface - Ocean Blue */}
       <mesh>
         <sphereGeometry args={[1, 64, 32]} />
         <meshStandardMaterial 
-          color="#1e40af"
-          roughness={0.7}
+          color="#1a365d"
+          roughness={0.8}
           metalness={0.1}
         />
       </mesh>
       
-      {/* Continents */}
-      <mesh scale={1.005}>
-        <sphereGeometry args={[1, 32, 16]} />
+      {/* Continents - Realistic Green/Brown */}
+      <mesh scale={1.002}>
+        <sphereGeometry args={[1, 48, 24]} />
         <meshStandardMaterial 
-          color="#059669"
+          color="#2d5016"
           transparent
-          opacity={0.9}
+          opacity={0.95}
           roughness={0.9}
         />
       </mesh>
       
-      {/* Atmosphere */}
-      <mesh scale={1.1}>
+      {/* Ice Caps */}
+      <mesh position={[0, 0.9, 0]} scale={0.3}>
+        <sphereGeometry args={[1, 16, 8]} />
+        <meshStandardMaterial 
+          color="#f0f8ff"
+          transparent
+          opacity={0.8}
+          roughness={0.2}
+        />
+      </mesh>
+      <mesh position={[0, -0.9, 0]} scale={0.25}>
+        <sphereGeometry args={[1, 16, 8]} />
+        <meshStandardMaterial 
+          color="#f0f8ff"
+          transparent
+          opacity={0.8}
+          roughness={0.2}
+        />
+      </mesh>
+      
+      {/* Atmosphere Glow */}
+      <mesh scale={1.08}>
         <sphereGeometry args={[1, 32, 16]} />
         <meshStandardMaterial 
-          color="#87ceeb"
+          color="#4a90e2"
           transparent
-          opacity={0.2}
+          opacity={0.15}
           roughness={0.1}
         />
       </mesh>
       
-      {/* Clouds */}
-      <mesh ref={cloudsRef} scale={1.02}>
+      {/* Dynamic Clouds */}
+      <mesh ref={cloudsRef} scale={1.01}>
         <sphereGeometry args={[1, 32, 16]} />
         <meshStandardMaterial 
           color="#ffffff"
           transparent
-          opacity={0.4}
-          roughness={0.8}
+          opacity={0.3}
+          roughness={0.9}
         />
       </mesh>
     </group>
