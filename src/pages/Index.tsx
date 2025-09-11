@@ -6,7 +6,7 @@ import PracticePlatforms from "@/components/sections/PracticePlatforms";
 import Certifications from "@/components/sections/Certifications";
 import JobSimulations from "@/components/sections/JobSimulations";
 import Projects from "@/components/sections/Projects";
-import EarthSection from "@/components/sections/Earth";
+
 import Contact from "@/components/sections/Contact";
 import SimpleStarfield from "@/components/3d/SimpleStarfield";
 
@@ -28,7 +28,6 @@ const Index = () => {
           <Certifications />
           <JobSimulations />
           <Projects />
-          <EarthSection />
           <Contact />
         </div>
       </main>

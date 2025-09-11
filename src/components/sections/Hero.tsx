@@ -35,19 +35,8 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-card via-background to-card/80"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Professional tech grid background */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(190,190,190,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(190,190,190,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      </div>
-
-      {/* Subtle tech accent elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-32 h-32 border border-primary/20 rounded-lg rotate-45"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 border border-accent/20 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-primary/5 rounded-lg blur-sm"></div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-16">

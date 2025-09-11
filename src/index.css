@@ -5,22 +5,25 @@
 /* Base Design System */
 @layer base {
   :root {
-    /* Base colors - Professional Tech Theme */
-    --background: 224 20% 8%;        /* deep tech dark */
-    --foreground: 0 0% 96%;          /* clean white */
-    --card: 224 20% 12%;             /* darker card */
-    --card-foreground: 0 0% 94%;
-    --border: 224 15% 20%;           /* subtle borders */
-    --input: 224 15% 18%;
-    --ring: 200 98% 65%;             /* electric blue ring */
-
-    --primary: 200 98% 65%;          /* electric blue */
-    --primary-foreground: 224 20% 8%;
-    --primary-glow: 200 98% 75%;
-
-    --accent: 280 90% 70%;           /* vibrant purple */
-    --accent-foreground: 224 20% 8%;
-    --accent-glow: 280 90% 80%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
 
     --muted: 222 47% 15%;
     --muted-foreground: 222 10% 70%;
