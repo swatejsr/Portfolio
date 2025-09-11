@@ -240,6 +240,23 @@ export default {
 					'100%': {
 						transform: 'translateX(0) translateY(0)'
 					}
+				},
+				'orbit': {
+					'0%': { transform: 'translate(0, 0) rotate(0deg)' },
+					'25%': { transform: 'translate(30px, -20px) rotate(90deg)' },
+					'50%': { transform: 'translate(0, -40px) rotate(180deg)' },
+					'75%': { transform: 'translate(-30px, -20px) rotate(270deg)' },
+					'100%': { transform: 'translate(0, 0) rotate(360deg)' }
+				},
+				'space-drift': {
+					'0%, 100%': { transform: 'translateX(0) translateY(0)' },
+					'33%': { transform: 'translateX(-20px) translateY(-10px)' },
+					'66%': { transform: 'translateX(10px) translateY(-5px)' }
+				},
+				'galaxy-rotation': {
+					'0%': { transform: 'rotate(0deg) scale(1)' },
+					'50%': { transform: 'rotate(180deg) scale(1.1)' },
+					'100%': { transform: 'rotate(360deg) scale(1)' }
 				}
 			},
 			animation: {
@@ -260,7 +277,10 @@ export default {
 				'morph': 'morph 8s ease-in-out infinite',
 				'shootingStar': 'shootingStar 3s linear infinite',
 				'twinkle': 'twinkle 2s ease-in-out infinite',
-				'drift': 'drift 15s ease-in-out infinite'
+				'drift': 'drift 15s ease-in-out infinite',
+				'orbit': 'orbit 20s linear infinite',
+				'space-drift': 'space-drift 30s ease-in-out infinite',
+				'galaxy-rotation': 'galaxy-rotation 60s linear infinite'
 			}
 		}
 	},

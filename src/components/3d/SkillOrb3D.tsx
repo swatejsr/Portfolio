@@ -7,6 +7,28 @@ const Orb = ({ skill, isHovered }: { skill: string; isHovered: boolean }) => {
   const orbRef = useRef<THREE.Mesh>(null);
   const textRef = useRef<THREE.Mesh>(null);
 
+  // Planet color mapping based on solar system
+  const getPlanetColors = (skill: string) => {
+    switch (skill) {
+      case 'React': // Earth
+        return { color: '#4A90E2', emissive: '#2E8B57', glow: '#87CEEB' };
+      case 'Python': // Mars
+        return { color: '#CD5C5C', emissive: '#A0522D', glow: '#FF4500' };
+      case 'Security': // Jupiter
+        return { color: '#DAA520', emissive: '#B8860B', glow: '#FFA500' };
+      case 'Cloud': // Venus
+        return { color: '#FFC649', emissive: '#F0E68C', glow: '#FFFF00' };
+      case 'C++': // Mercury
+        return { color: '#708090', emissive: '#2F4F4F', glow: '#C0C0C0' };
+      case 'Firebase': // Saturn
+        return { color: '#F4A460', emissive: '#D2691E', glow: '#FFD700' };
+      default:
+        return { color: '#4A90E2', emissive: '#2E8B57', glow: '#87CEEB' };
+    }
+  };
+
+  const planetColors = getPlanetColors(skill);
+
   useFrame((state) => {
     if (orbRef.current) {
       orbRef.current.rotation.x = state.clock.elapsedTime * 0.3;
@@ -24,18 +46,29 @@ const Orb = ({ skill, isHovered }: { skill: string; isHovered: boolean }) => {
     <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
       <Sphere ref={orbRef} args={[1, 32, 32]}>
         <meshPhongMaterial
-          color="hsl(var(--primary))"
+          color={planetColors.color}
           transparent
-          opacity={0.7}
-          emissive="hsl(var(--primary-glow))"
-          emissiveIntensity={0.2}
+          opacity={0.9}
+          emissive={planetColors.emissive}
+          emissiveIntensity={0.3}
         />
       </Sphere>
 
-      <mesh rotation={[Math.PI / 2, 0, 0]}>
-        <torusGeometry args={[1.5, 0.05, 16, 32]} />
-        <meshPhongMaterial color="hsl(var(--accent))" transparent opacity={0.6} />
-      </mesh>
+      {/* Saturn rings for Firebase */}
+      {skill === 'Firebase' && (
+        <mesh rotation={[Math.PI / 2, 0, 0]}>
+          <torusGeometry args={[1.5, 0.05, 16, 32]} />
+          <meshPhongMaterial color={planetColors.glow} transparent opacity={0.6} />
+        </mesh>
+      )}
+
+      {/* Orbital rings for other planets */}
+      {skill !== 'Firebase' && (
+        <mesh rotation={[Math.PI / 2, 0, 0]}>
+          <torusGeometry args={[1.4, 0.02, 16, 32]} />
+          <meshPhongMaterial color={planetColors.glow} transparent opacity={0.4} />
+        </mesh>
+      )}
 
       <Suspense fallback={null}>
         <Text
