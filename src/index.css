@@ -221,8 +221,9 @@
   .gradient-card-jobs,
   .gradient-card-projects,
   .gradient-card-contact {
-    background: transparent; /* All sections inherit body background */
+    background: rgba(15, 23, 42, 0.8); /* Semi-transparent dark overlay for readability */
     backdrop-filter: blur(8px); /* Subtle frosted-glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
     border-radius: var(--radius);
     padding: 1rem;
   }

@@ -13,15 +13,21 @@ import SimpleStarfield from "@/components/3d/SimpleStarfield";
 const Index = () => {
   return (
     <div className="min-h-screen relative">
-      {/* Space background only for non-hero sections */}
+      {/* Space background for all sections except hero */}
       <div className="absolute inset-0 z-[-2]">
         <SimpleStarfield />
       </div>
       
       <Navigation />
       <main>
-        <Hero />
-        <div className="relative z-10 bg-gradient-to-b from-background/95 via-background/98 to-background/95 backdrop-blur-sm">
+        {/* Hero section with light background overlay */}
+        <div className="relative z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
+          <Hero />
+        </div>
+        
+        {/* Other sections with transparent backgrounds to show space */}
+        <div className="relative z-10">
           <About />
           <Skills />
           <PracticePlatforms />
