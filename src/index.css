@@ -290,7 +290,62 @@
   }
 }
 
-/* Asteroid belt */
+/* Enhanced Animations for Better Visual Appeal */
+@keyframes space-drift {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-0.5deg); }
+}
+
+@keyframes galaxy-rotation {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+/* Enhanced Shooting Stars */
+.shooting-star {
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(95, 39, 205, 0), rgba(95, 39, 205, 1), rgba(95, 39, 205, 0));
+  border-radius: 50%;
+  filter: drop-shadow(0 0 6px rgba(95, 39, 205, 0.6));
+  animation: shootingStar 8s ease-in-out infinite;
+  width: 200px;
+}
+
+/* Enhanced Asteroid Belt */
 .asteroid {
-  @apply absolute w-0.5 h-0.5 bg-gray-400/60 rounded-full shadow-[0_0_2px_#9ca3af];
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: radial-gradient(circle, rgba(156, 163, 175, 0.8) 0%, rgba(75, 85, 99, 0.6) 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(156, 163, 175, 0.4);
+}
+
+/* Enhanced Nebula Effects */
+.nebula-cloud {
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  background: radial-gradient(ellipse, rgba(139, 69, 19, 0.1) 0%, rgba(75, 0, 130, 0.08) 50%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.cosmic-dust {
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  background: linear-gradient(90deg, transparent 0%, rgba(123, 104, 238, 0.05) 50%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(20px);
 }
