@@ -58,21 +58,21 @@ const Hero = () => {
 
           {/* Text Content */}
           <div className="text-center lg:text-left animate-slide-in-right">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 animate-scale-in">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 animate-scale-in">
               Hi, I'm{" "}
               <span
-                className="text-gradient-accent bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-gradient-shift"
+                className="text-gradient-primary bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent animate-gradient-shift"
                 style={{ backgroundSize: "200% 200%" }}
               >
                 Swatej Singh
               </span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-4 animate-fade-in tilt-effect">
+            <p className="text-xl sm:text-2xl text-slate-700 mb-4 animate-fade-in tilt-effect">
               Software Engineer | Cybersecurity & Web Development Enthusiast
             </p>
 
-            <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl animate-fade-in">
+            <p className="text-lg text-slate-600 mb-8 max-w-2xl animate-fade-in">
               Building secure and modern web solutions with a passion for exploring
               cybersecurity and creating user-focused digital experiences.
             </p>
@@ -80,9 +80,9 @@ const Hero = () => {
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 animate-fade-in">
               <Button
                 onClick={handleViewResume}
-                className="bg-primary hover:bg-primary-glow text-primary-foreground shadow-glow hover-lift magnetic-hover transition-spring group card-3d"
+                className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white shadow-lg hover:shadow-xl hover-lift transition-spring group px-8 py-3 text-lg font-semibold"
               >
-                <FileText className="mr-2 h-4 w-4 transition-transform group-hover:wiggle-effect" />
+                <FileText className="mr-2 h-5 w-5 transition-transform group-hover:wiggle-effect" />
                 View Resume
               </Button>
 
@@ -93,7 +93,7 @@ const Hero = () => {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground hover-lift magnetic-hover transition-spring card-3d"
+                className="border-2 border-cyan-600 text-cyan-700 hover:bg-cyan-600 hover:text-white hover-lift transition-spring px-8 py-3 text-lg font-semibold shadow-md hover:shadow-lg"
               >
                 Get In Touch
               </Button>
@@ -107,7 +107,7 @@ const Hero = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-full border border-accent/30 text-accent-foreground hover:bg-accent hover:text-accent-foreground transition-spring shadow-card hover-glow card-3d"
+                  className="p-3 rounded-full border-2 border-slate-300 text-slate-600 hover:bg-slate-600 hover:text-white hover:border-slate-600 transition-spring shadow-md hover:shadow-lg hover-lift"
                   style={{ animationDelay: `${0.8 + index * 0.1}s` }}
                   aria-label={link.label}
                 >

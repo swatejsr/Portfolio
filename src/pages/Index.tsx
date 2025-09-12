@@ -20,9 +20,9 @@ const Index = () => {
       
       <Navigation />
       <main>
-        {/* Hero section with light background overlay */}
+        {/* Hero section with colorful background gradient */}
         <div className="relative z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50"></div>
           <Hero />
         </div>
         
